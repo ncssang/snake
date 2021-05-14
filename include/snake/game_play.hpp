@@ -1,12 +1,17 @@
 #pragma once
 
-#include <memory>
 #include <array>
+#include <memory>
 
 #include "snake/game.hpp"
 #include "snake/state.hpp"
+#include "snake/snake.hpp"
 
-#include<SFML/Graphics/Sprite.hpp>
+// #include <SFML/Graphics/Drawable.hpp>
+// #include <SFML/Graphics/RenderStates.hpp>
+// #include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Text.hpp>
 
 class GamePlay : public Engine::State
 {
@@ -15,12 +20,17 @@ private:
     sf::Sprite m_grass;
     sf::Sprite m_food;
     std::array<sf::Sprite, 4> m_walls;
+    Snake m_snake;
 
-//Todo:
-//Added snake
+    sf::Text m_scoreText;
+    int m_score;
 
+    sf::Vector2f m_snakeDirection;
+    sf::Time m_elapsedTime;
+
+    // bool m_isPaused;
 public:
-    GamePlay();
+    GamePlay(std::shared_ptr<Context>& context);
     ~GamePlay();
 
     void Init() override;

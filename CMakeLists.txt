@@ -9,6 +9,6 @@ find_package(
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-add_executable(snake src/main.cpp src/asset_man.cpp src/game.cpp src/state_man.cpp src/main_menu.cpp)
+add_executable(snake src/main.cpp src/asset_man.cpp src/game.cpp src/state_man.cpp src/main_menu.cpp src/game_play.cpp src/snake.cpp src/game_over.cpp src/pause_game.cpp)
 
 target_link_libraries(snake sfml-graphics sfml-system sfml-window)
